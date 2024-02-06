@@ -1,0 +1,1 @@
+export { pluginBunnyCdn } from './plugin'
