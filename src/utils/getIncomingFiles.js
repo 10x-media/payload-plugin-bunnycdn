@@ -23,6 +23,7 @@ export function getIncomingFiles({
                 if (req.payloadUploadSizes?.[key] && data.mimeType) {
                     files = files.concat([
                         {
+                            sizeName: key,
                             filename: `${resizedFileData.filename}`,
                             mimeType: data.mimeType,
                             buffer: req.payloadUploadSizes[key],

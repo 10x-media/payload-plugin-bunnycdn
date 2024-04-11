@@ -1,5 +1,6 @@
 import { Readable } from 'stream';
 import https from 'https';
+import sharp from 'sharp';
 
 export default async function ({ data, collection, req, file, prefix, credentials, watermark, watermarkImagePath }) {
     // if image, add watermark
@@ -17,6 +18,8 @@ export default async function ({ data, collection, req, file, prefix, credential
         }
     });
 
+
+    console.log(file.filename)
     const options = {
         method: 'PUT',
         host: credentials.hostname,
@@ -58,10 +61,6 @@ export default async function ({ data, collection, req, file, prefix, credential
 // Function to add a watermark
 export async function addWatermark(buffer, watermarkImagePath) {
     try {
-
-        function sharp() {
-
-        }
 
         // Read the main image and get its metadata
         const mainImage = sharp(buffer);

@@ -3,10 +3,15 @@ import bunnyDelete from '../utils/bunnyDelete';
 import bunnyUpload from '../utils/bunnyUpload';
 
 
-export default function ({ collection, prefix, credentials, watermarkImagePath }) {
+export default function ({ collection, prefix, credentials, pluginOptions }) {
+
+    // Special collection configs: prefix, watermarkImagePath, watermark, watermarkSizes
+    const collectionPluginOptions = pluginOptions.collections?.[collection] || {}
+    console.log('collectionPluginOptions', collectionPluginOptions)
 
     return async ({ req, data, originalDoc }) => {
         try {
+            console.log('colop', collectionPluginOptions)
             console.time('File Upload')
             const files = getIncomingFiles({ req, data })
             console.log(files)
@@ -39,7 +44,20 @@ export default function ({ collection, prefix, credentials, watermarkImagePath }
                 }
 
                 const promises = files.map(async file => {
-                    await bunnyUpload({ collection, data, req, file, prefix, credentials, watermark: !data?.disableWatermark && watermarkImagePath, watermarkImagePath })
+                    const watermarkPath = file.sizeName ? collectionPluginOptions.imageSizes?.[file.sizeName]?.watermarkImagePath :
+                        collectionPluginOptions.watermarkImagePath
+                    await bunnyUpload({
+                        collection,
+                        data,
+                        req,
+                        file,
+                        prefix,
+                        credentials,
+                        // If specific file has watermark not disabled, 
+                        watermark: !data?.disableWatermark && watermarkPath && collectionPluginOptions.imageSizes?.[file.sizeName]?.watermark,
+                        // grap watermark from specific to general
+                        watermarkImagePath: watermarkPath
+                    })
                     console.log(`Uploading file ${file.filename} for collection ${collection}`)
                 })
 

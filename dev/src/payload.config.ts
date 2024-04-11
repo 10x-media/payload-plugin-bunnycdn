@@ -1,3 +1,4 @@
+
 import { buildConfig } from 'payload/config';
 import path from 'path';
 import Users from './collections/Users';
@@ -5,7 +6,8 @@ import Examples from './collections/Examples';
 import { mongooseAdapter } from '@payloadcms/db-mongodb'
 import { webpackBundler } from '@payloadcms/bundler-webpack'
 import { slateEditor } from '@payloadcms/richtext-slate'
-import { pluginBunnyCdn, samplePlugin } from '../../src/index'
+import { pluginBunnyCdn } from '../../src/index'
+import { Media } from './collections/Media';
 
 export default buildConfig({
   admin: {
@@ -29,7 +31,7 @@ export default buildConfig({
   },
   editor: slateEditor({}),
   collections: [
-    Examples, Users,
+    Examples, Users, Media
   ],
   typescript: {
     outputFile: path.resolve(__dirname, 'payload-types.ts'),
@@ -46,9 +48,16 @@ export default buildConfig({
     },
     collections: {
       media: {
-        prefix: 'media'
+        prefix: 'media',
+        watermark: false,
+        imageSizes: {
+          'croppedWatermarked': {
+            watermark: true,
+            watermarkImagePath: path.resolve(__dirname, 'instyle-watermark.png'),
+          }
+        }
       }
-    }
+    },
   })],
   db: mongooseAdapter({
     url: process.env.DATABASE_URI,

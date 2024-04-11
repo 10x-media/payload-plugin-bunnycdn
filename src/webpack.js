@@ -29,6 +29,7 @@ export const extendWebpackConfig =
             stream: mockModulePath,
             util: mockModulePath,
             sharp: mockModulePath,
+            https: mockModulePath,
           },
         },
       }
