@@ -1,6 +1,6 @@
 {
   "name": "payload-plugin-bunnycdn",
-  "version": "0.0.4",
+  "version": "0.0.6",
   "description": "Bunny CDN Plugin for Payload CMS (PROTOTYPE)",
   "main": "dist/index.js",
   "keywords": [

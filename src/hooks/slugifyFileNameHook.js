@@ -29,6 +29,7 @@ export default function ({ collection }) {
         const nestedFileNames = flatten(data.sizes) || {};
         for (const [key, value] of Object.entries(nestedFileNames)) {
             if (key.includes('filename')) {
+                if (!value) continue;
                 const slu = slugify(value, { lower: true })
                 const newFileName = fileExists ? [`${slu.split('.')[0]}-${currentDate}`, slu.split('.')[1]].join('.') : slu
                 nestedFileNames[key] = newFileName

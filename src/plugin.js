@@ -59,7 +59,7 @@ export function pluginBunnyCdn(pluginOptions) {
             ...(collectionConfig.hooks || {}),
             beforeValidate: [
               ...(collectionConfig.hooks?.beforeValidate || []),
-              // slugifyFileNameHook({ collection: collectionConfig.slug, credentials })
+              slugifyFileNameHook({ collection: collectionConfig.slug, credentials })
             ].filter(Boolean),
             beforeChange: [
               ...(collectionConfig.hooks?.beforeChange || []),
