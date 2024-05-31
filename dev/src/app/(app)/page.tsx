@@ -1,4 +1,4 @@
-import Example from '@/components/Example'
+// import Example from '@/components/Example'
 import Link from 'next/link'
 import React from 'react'
 
@@ -36,7 +36,7 @@ const Page = () => {
         contains an example of a custom route running the Local API.
       </p>
 
-      <Example />
+      {/* <Example /> */}
 
       <p>You can use the Local API in your server components like this:</p>
       <pre>
