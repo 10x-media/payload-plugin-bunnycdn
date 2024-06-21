@@ -1,9 +1,14 @@
 import { flatten, unflatten } from "flattenizer";
 import payload from "payload";
 import slugify from "slugify";
+import { getIncomingFiles } from "../utils/getIncomingFiles";
 
 export default function ({ collection }) {
     return async function ({ data, req }) {
+
+        const files = getIncomingFiles({ req, data })
+
+        if (!files.length) return data;
 
         let sluggedFilename = slugify(data.filename, { lower: true });
         const currentDate = Date.now();
