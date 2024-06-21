@@ -1,6 +1,6 @@
-import getAfterDeleteHook from "./hooks/getAfterDeleteHook"
-import getBeforeChangeHook from "./hooks/getBeforeChangeHook"
-import slugifyFileNameHook from "./hooks/slugifyFileNameHook"
+import getAfterDeleteHook from "../hooks/getAfterDeleteHook"
+import getBeforeChangeHook from "../hooks/getBeforeChangeHook"
+import slugifyFileNameHook from "../hooks/slugifyFileNameHook"
 
 /**
  * @param {Object} pluginOptions - Options for the plugin.

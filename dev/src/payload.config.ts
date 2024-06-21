@@ -6,7 +6,7 @@ import Users from './collections/Users'
 import Examples from './collections/Examples'
 import { mongooseAdapter } from '@payloadcms/db-mongodb'
 import { lexicalEditor } from '@payloadcms/richtext-lexical'
-import { pluginBunnyCdn, samplePlugin } from '../../src/index'
+import { bunnyStorage } from '../../src/index'
 import sharp from 'sharp'
 import { Media } from './collections/Media'
 
@@ -21,7 +21,7 @@ export default buildConfig({
     outputFile: path.resolve(__dirname, 'payload-types.ts'),
   },
   plugins: [
-    pluginBunnyCdn({
+    bunnyStorage({
       credentials: {
         hostname: process.env.PAYLOAD_PUBLIC_BUNNY_CDN_REGION ? `${process.env.PAYLOAD_PUBLIC_BUNNY_CDN_REGION}.${(process.env.PAYLOAD_PUBLIC_BUNNY_CDN_BASE_HOSTNAME || 'storage.bunnycdn.com')}` : (process.env.PAYLOAD_PUBLIC_BUNNY_CDN_BASE_HOSTNAME || 'storage.bunnycdn.com'),
         storageZoneName: process.env.PAYLOAD_PUBLIC_BUNNY_CDN_STORAGE_ZONE_NAME,

@@ -1,4 +1,4 @@
-import bunnyDelete from '../utils/bunnyDelete';
+import bunnyDelete from '../utils/-bunnyDelete';
 
 
 export default function ({ collection, credentials, prefix }) {

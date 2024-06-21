@@ -1,6 +1,6 @@
 import { getIncomingFiles } from '../utils/getIncomingFiles';
-import bunnyDelete from '../utils/bunnyDelete';
-import bunnyUpload from '../utils/bunnyUpload';
+import bunnyDelete from '../utils/-bunnyDelete';
+import bunnyUpload from '../utils/-bunnyUpload';
 
 
 export default function ({ collection, prefix, credentials, pluginOptions }) {
