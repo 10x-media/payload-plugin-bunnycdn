@@ -1,6 +1,6 @@
 {
   "name": "payload-plugin-bunnycdn",
-  "version": "0.0.0=1",
+  "version": "0.1.0",
   "type": "module",
   "homepage:": "https://payloadcms.com",
   "repository": "git@github.com:payloadcms/payload-plugin-template.git",
