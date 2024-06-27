@@ -24,6 +24,9 @@ importers:
       slugify:
         specifier: ^1.6.6
         version: 1.6.6
+      tsc:
+        specifier: ^2.0.4
+        version: 2.0.4
     devDependencies:
       '@payloadcms/db-mongodb':
         specifier: beta
@@ -2735,6 +2738,10 @@ packages:
     resolution: {integrity: sha512-8+gr5+lqO3G84KdiTSMRLtuyJ+nTBVRKuCrK4lidMPdVeEp0uqC875uE5NMcaA7YYMN7XsNiFQuMvasF8HT/xQ==}
     peerDependencies:
       typescript: '>=3.7.0'
+
+  tsc@2.0.4:
+    resolution: {integrity: sha512-fzoSieZI5KKJVBYGvwbVZs/J5za84f2lSTLPYf6AGiIf43tZ3GNrI1QzTLcjtyDDP4aLxd46RTZq1nQxe7+k5Q==}
+    hasBin: true
 
   tslib@1.14.1:
     resolution: {integrity: sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==}
@@ -6324,6 +6331,8 @@ snapshots:
   ts-essentials@7.0.3(typescript@5.5.2):
     dependencies:
       typescript: 5.5.2
+
+  tsc@2.0.4: {}
 
   tslib@1.14.1: {}
 
