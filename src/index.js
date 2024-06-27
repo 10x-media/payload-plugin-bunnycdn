@@ -4,6 +4,20 @@ import { getHandleDelete } from './handleDelete.js'
 import { getHandleUpload } from './handleUpload.js'
 import { getHandler } from './staticHandler.js'
 
+/**
+ * Bunny CDN Storage Plugin
+ * @param {Object} bunnyStorageOptions Bunny CDN Storage Plugin Options
+ * @param {Object} bunnyStorageOptions.credentials Bunny CDN Storage Plugin Credentials
+ * @param {string} bunnyStorageOptions.credentials.hostname Bunny CDN Storage Plugin Hostname
+ * @param {string} bunnyStorageOptions.credentials.storageZoneName Bunny CDN Storage Plugin Storage Zone Name
+ * @param {string} bunnyStorageOptions.credentials.pullZoneName Bunny CDN Storage Plugin Pull Zone Name
+ * @param {string} bunnyStorageOptions.credentials.accessKey Bunny CDN Storage Plugin Access Key
+ * @param {string} bunnyStorageOptions.access Bunny CDN Storage Plugin Access
+ * @param {Object} bunnyStorageOptions.collections Bunny CDN Storage Plugin Collections
+ * @param {Object} bunnyStorageOptions.collections.collection Bunny CDN Storage Plugin Collection
+ * @param {string} bunnyStorageOptions.collections.collection.prefix Bunny CDN Storage Plugin Collection Prefix
+ * @param {boolean} bunnyStorageOptions.collections.collection.disablePayloadAccessControl Bunny CDN Storage Plugin Collection Disable Payload Access Control
+ */
 export const bunnyStorage = (bunnyStorageOptions) => (incomingConfig) => {
   if (bunnyStorageOptions.enabled === false) {
     return incomingConfig
@@ -44,19 +58,16 @@ export const bunnyStorage = (bunnyStorageOptions) => (incomingConfig) => {
   })(config)
 }
 
-function bunnyStorageInternal({ credentials }) {
+function bunnyStorageInternal({ credentials, access = 'public' }) {
   return ({ collection, prefix }) => {
 
     return {
       name: 'bunnycdn',
       generateURL: getGenerateURL({ credentials }),
       handleDelete: getHandleDelete({ credentials }),
-      handleUpload: getHandleUpload({
-        credentials,
-        //  prefix:
-      }),
+      handleUpload: getHandleUpload({ credentials }),
 
-      staticHandler: getHandler({ collection, credentials, prefix }),
+      staticHandler: getHandler({ collection, credentials, prefix, access }),
     }
   }
 }

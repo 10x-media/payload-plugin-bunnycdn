@@ -1,6 +1,6 @@
 //@ts-nocheck
 
-import { buildConfig } from 'payload/config'
+import { buildConfig } from 'payload'
 import path from 'path'
 import Users from './collections/Users'
 import Examples from './collections/Examples'
@@ -28,9 +28,11 @@ export default buildConfig({
         pullZoneName: process.env.PAYLOAD_PUBLIC_BUNNY_CDN_PULL_ZONE_NAME,
         accessKey: process.env.BUNNY_CDN_API_KEY,
       },
+      access: 'private',
       collections: {
         media: {
-          prefix: 'media'
+          prefix: 'media',
+          // disablePayloadAccessControl: true,
         },
       },
     }),

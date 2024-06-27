@@ -1,23 +1,24 @@
 // import { Upload } from '@aws-sdk/lib-storage'
 import fs from 'fs'
+import { Readable } from 'stream';
+import https from 'https';
 // import path from 'path'
 
 // const multipartThreshold = 1024 * 1024 * 50 // 50MB
 
 export const getHandleUpload = ({
-  prefix,
   credentials,
 
 }) => {
   return async ({ data, file }) => {
 
-    console.log('data.prefix', data.prefix)
+    const prefix = data.prefix
 
     const newStream = file.tempFilePath
       ? fs.createReadStream(file.tempFilePath)
       : new Readable({
         read() {
-          this.push(newBuffer);
+          this.push(file.buffer);
           this.push(null); // No more data
         }
       });
