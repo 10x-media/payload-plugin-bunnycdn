@@ -13,8 +13,8 @@ importers:
   .:
     dependencies:
       '@payloadcms/plugin-cloud-storage':
-        specifier: ^3.0.0-beta.40
-        version: 3.0.0-canary.f6e77b8(@aws-sdk/client-s3@3.600.0)(@aws-sdk/lib-storage@3.600.0(@aws-sdk/client-s3@3.600.0))(payload@3.0.0-beta.55(@swc/core@1.6.5(@swc/helpers@0.5.11))(@swc/types@0.1.9)(graphql@16.9.0)(typescript@5.5.2))
+        specifier: 3.0.0-beta.55
+        version: 3.0.0-beta.55(@aws-sdk/client-s3@3.600.0)(@aws-sdk/lib-storage@3.600.0(@aws-sdk/client-s3@3.600.0))(payload@3.0.0-beta.55(@swc/core@1.6.5(@swc/helpers@0.5.11))(@swc/types@0.1.9)(graphql@16.9.0)(typescript@5.5.2))
       axios:
         specifier: ^1.6.8
         version: 1.7.2
@@ -811,8 +811,8 @@ packages:
       next: ^15.0.0-rc.0
       payload: 3.0.0-beta.55
 
-  '@payloadcms/plugin-cloud-storage@3.0.0-canary.f6e77b8':
-    resolution: {integrity: sha512-E0GhXVGtwxzFXDLY5xZ+IbLbJH6G4au8eXuE21lWfhERaC6XSHE0RgX+Wlll37xle3OWuY26cPSiEnaukF7LDw==}
+  '@payloadcms/plugin-cloud-storage@3.0.0-beta.55':
+    resolution: {integrity: sha512-qzROeetx7tjNd4w3rQJthlSCUjcldgLywH4yXKwvKidzqDIEMLVysDP/G4g163u/mLobhfVth23ctQyZH0HWWA==}
     peerDependencies:
       '@aws-sdk/client-s3': ^3.525.0
       '@aws-sdk/lib-storage': ^3.525.0
@@ -820,7 +820,7 @@ packages:
       '@azure/storage-blob': ^12.11.0
       '@google-cloud/storage': ^7.7.0
       '@vercel/blob': ^0.22.3
-      payload: 3.0.0-canary.f6e77b8
+      payload: 3.0.0-beta.55
     peerDependenciesMeta:
       '@aws-sdk/client-s3':
         optional: true
@@ -4932,7 +4932,7 @@ snapshots:
       - typescript
       - utf-8-validate
 
-  '@payloadcms/plugin-cloud-storage@3.0.0-canary.f6e77b8(@aws-sdk/client-s3@3.600.0)(@aws-sdk/lib-storage@3.600.0(@aws-sdk/client-s3@3.600.0))(payload@3.0.0-beta.55(@swc/core@1.6.5(@swc/helpers@0.5.11))(@swc/types@0.1.9)(graphql@16.9.0)(typescript@5.5.2))':
+  '@payloadcms/plugin-cloud-storage@3.0.0-beta.55(@aws-sdk/client-s3@3.600.0)(@aws-sdk/lib-storage@3.600.0(@aws-sdk/client-s3@3.600.0))(payload@3.0.0-beta.55(@swc/core@1.6.5(@swc/helpers@0.5.11))(@swc/types@0.1.9)(graphql@16.9.0)(typescript@5.5.2))':
     dependencies:
       find-node-modules: 2.1.3
       payload: 3.0.0-beta.55(@swc/core@1.6.5(@swc/helpers@0.5.11))(@swc/types@0.1.9)(graphql@16.9.0)(typescript@5.5.2)
