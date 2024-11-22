@@ -29,30 +29,29 @@
   "author": "dev@payloadcms.com",
   "license": "MIT",
   "peerDependencies": {
-    "payload": "beta"
+    "payload": "latest"
   },
   "devDependencies": {
-    "@payloadcms/db-mongodb": "beta",
-    "@payloadcms/next": "beta",
-    "@payloadcms/plugin-cloud": "beta",
-    "@payloadcms/richtext-lexical": "beta",
+    "@payloadcms/db-mongodb": "latest",
+    "@payloadcms/next": "latest",
+    "@payloadcms/richtext-lexical": "latest",
     "@types/node": "^20.12.12",
-    "@types/react": "npm:types-react@19.0.0-beta.2",
-    "@types/react-dom": "npm:types-react-dom@19.0.0-beta.2",
+    "@types/react": "npm:types-react@19.0.0-rc.1",
+    "@types/react-dom": "npm:types-react-dom@19.0.0-rc.1",
     "cross-env": "^7.0.3",
     "dotenv": "^16.4.5",
     "eslint": "^8",
     "eslint-config-next": "15.0.0-rc.0",
     "graphql": "^16.8.1",
     "next": "15.0.0-rc.0",
-    "payload": "beta",
-    "react": "^19.0.0-rc-f994737d14-20240522",
-    "react-dom": "^19.0.0-rc-f994737d14-20240522",
+    "payload": "latest",
+    "react": "19.0.0-rc-65a56d0e-20241020",
+    "react-dom": "19.0.0-rc-65a56d0e-20241020",
     "sharp": "0.32.6",
     "typescript": "5.5.2"
   },
   "dependencies": {
-    "@payloadcms/plugin-cloud-storage": "beta",
+    "@payloadcms/plugin-cloud-storage": "latest",
     "axios": "^1.6.8",
     "flattenizer": "^1.1.3",
     "slugify": "^1.6.6"
@@ -62,12 +61,12 @@
   },
   "pnpm": {
     "overrides": {
-      "@types/react": "npm:types-react@19.0.0-beta.2",
-      "@types/react-dom": "npm:types-react-dom@19.0.0-beta.2"
+      "@types/react": "npm:types-react@19.0.0-rc.1",
+      "@types/react-dom": "npm:types-react-dom@19.0.0-rc.1"
     }
   },
   "overrides": {
-    "@types/react": "npm:types-react@19.0.0-beta.2",
-    "@types/react-dom": "npm:types-react-dom@19.0.0-beta.2"
+    "@types/react": "npm:types-react@19.0.0-rc.1",
+    "@types/react-dom": "npm:types-react-dom@19.0.0-rc.1"
   }
 }
